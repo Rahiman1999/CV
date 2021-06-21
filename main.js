@@ -20,3 +20,32 @@
     }
   });
 })();
+
+(() => {
+  const filterContainer = document.querySelector(".portfolio-filter"),
+    portfoilioItemsContainer = document.querySelector(".portfolio-items"),
+    portfolioItems = document.querySelector(".portfolio-item"),
+    popup = document.querySelector(".portfolio-popup"),
+    prevBtn = popup.querySelector(".pp-prev"),
+    nextBtn = popup.querySelector(".pp-next"),
+    closeBtn = popup.querySelector(".pp-close"),
+    projectDetailsContainer = popup.querySelector(".pp-details"),
+    projectDetailsBtn = popup.querySelector(".pp-project-details-btn");
+  let itmeIndex, slideIndex, screenshots;
+  filterContainer.addEventListener("click", (event) => {
+    if (
+      event.target.classList.contains("filter-item") &&
+      !event.target.classList.contains("active")
+    ) {
+      filterContainer
+        .querySelector(".active")
+        .classList.remove("outer-shadow", "active");
+      event.target.classList.add("active", "outer-shadow");
+      const target = event.target.getAttribute("data-target");
+      console.log(target);
+      portfolioItems.forEach((item) => {
+        console.log(item);
+      });
+    }
+  });
+})();
